@@ -4,7 +4,7 @@ Created on May 19, 2014
 @author: karthik
 '''
 
-def quickSort(inList, start, end):
+def countComparison(inList, start, end):
     
     if len(inList) == 1:
         return inList
@@ -23,10 +23,10 @@ def quickSort(inList, start, end):
     inList[pivotIndex] = pivotElem
 
     if (len(inList[start:pivotIndex]) > 1):
-        quickSort(inList, start, pivotIndex)
+        countComparison(inList, start, pivotIndex)
     
     if (len(inList[pivotIndex+1:end]) > 1):
-        quickSort(inList, pivotIndex+1, len(inList))
+        countComparison(inList, pivotIndex+1, len(inList))
            
     return inList
    
@@ -38,5 +38,5 @@ with open(inFileName) as inFile:
     for line in inFile:
         valuesIn.append(int(line))
 '''
-print quickSort(valuesIn, 0, len(valuesIn))
+print countComparison(valuesIn, 0, len(valuesIn))
     
